@@ -1,0 +1,12 @@
+import math
+
+def ap_term(a,b,n):
+    d = b-a
+    return a + (n - 1) * d
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,b = map(int, input().split())
+        n = int(input())
+        print(ap_term(a,b,n))
