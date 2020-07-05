@@ -1,0 +1,9 @@
+def convert_fah_to_cel(fah):
+    cel = (fah - 32) / 1.8
+    return cel
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        fah = int(input())
+        print(convert_fah_to_cel(fah))
