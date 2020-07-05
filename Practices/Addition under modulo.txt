@@ -1,0 +1,12 @@
+def addition_under_modulo(a,b):
+    M = 1000000007
+    c = a+b
+    d = c % M
+    return d
+    
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,b = map(int, input().split())
+        print(addition_under_modulo(a,b))
