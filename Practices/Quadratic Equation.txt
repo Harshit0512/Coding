@@ -1,0 +1,15 @@
+def quadratic_equation(a,b,c):
+    d = -b + ((b*b) - 4*a*c)
+    e = d/2*a
+    f = -b - ((b*b) - 4*a*c)
+    g = f/2*a
+    if d < 0 or f < 0:
+        print("Imaginary")
+    else:
+        print(int(e), int(g))
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,b,c = map(int, input().split())
+        quadratic_equation(a,b,c)
