@@ -1,0 +1,9 @@
+def swap_case(s):
+    a = s.swapcase()
+    print(a)
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = input()
+        swap_case(s)
