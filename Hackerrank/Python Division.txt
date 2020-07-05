@@ -1,0 +1,10 @@
+def python_division(a,b):
+    print(a//b)
+    print(a/b)
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a = int(input())
+        b = int(input())
+        python_division(a,b)
