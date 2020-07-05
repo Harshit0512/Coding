@@ -1,1 +1,8 @@
+def absolute(a):
+    return abs(a)
 
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a = int(input())
+        print(absolute(a))
