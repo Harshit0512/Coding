@@ -1,0 +1,11 @@
+import math
+
+def gp_term(a,b,n):
+    return (a*(b/a)**(n-1))
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,b = map(int, input().split())
+        n = int(input())
+        print(math.floor(gp_term(a,b,n)))
