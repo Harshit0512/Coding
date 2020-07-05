@@ -1,0 +1,10 @@
+def print_fullname(a,b):
+    print('Hello {} {}! You just delved into python.'.format(a,b))
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a = input()
+        b = input()
+        print_fullname(a,b)
+        
