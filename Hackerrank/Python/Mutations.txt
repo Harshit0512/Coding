@@ -1,0 +1,10 @@
+def mutable_check(s,a,c):
+    print(s[:a] + c + s[a+1:])
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = input()
+        a = int(input())
+        c = input()
+        mutable_check(s,a,c)
