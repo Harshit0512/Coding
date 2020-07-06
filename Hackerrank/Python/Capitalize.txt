@@ -1,0 +1,8 @@
+def solve(s):
+    print(' '.join((word.capitalize() for word in s)))
+    
+if __name__ == '__main__':
+    t= int(input())
+    for i in range(t):
+        s = input().split(' ')
+        solve(s)
