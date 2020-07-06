@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    n = int(input())
+    list = []
+    for i in range(n):
+        x = input().split(" ")
+        command = x[0]
+        if command == 'insert':
+            list.insert(int(x[1]), int(x[2]))
+        elif command == 'remove':
+            list.remove(int(x[1]))
+        elif command == 'append':
+            list.append(int(x[1]))
+        elif command == 'sort':
+            list.sort()
+        elif command == 'pop':
+            list.pop()
+        elif command == 'reverse':
+            list.reverse()
+        elif command == 'print':
+            print(list)
