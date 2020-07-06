@@ -1,0 +1,11 @@
+def leap_year(a):
+    if a%4==0:
+        return True
+    else:
+        return False
+    
+if __name__ == '__main_':
+    t = int(input())
+    for i in range(t):
+        a = int(input())
+        print(leap_year(a))
