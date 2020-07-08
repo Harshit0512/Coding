@@ -1,0 +1,32 @@
+#1st method
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n1 = int(input())
+        s1 = set(map(int, input().split()))
+        n2 = int(input())
+        s2 = set(map(int,input().split()))
+        print(s1.issubset(s2))
+    
+
+#2nd method
+
+def check_subset(n1,s1,n2,s2):
+    if s1 & s2 == s2: 
+        return True
+    else:
+        return False
+
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n1 = int(input())
+        s1 = set(sorted(map(int, input().split())))
+        n2 = int(input())
+        s2 = set(sorted(map(int,input().split())))
+        print(check_subset(n1,s1,n2,s2))
+    
