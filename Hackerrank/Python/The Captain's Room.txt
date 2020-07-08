@@ -1,0 +1,4 @@
+k = int(input())
+list1 = list(map(int, input().split()))
+captain_room = (sum(set(list1)) * k - sum(list1)) // (k - 1)
+print(captain_room)
