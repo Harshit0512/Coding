@@ -1,0 +1,9 @@
+import math
+def quadraticRoots(a,b,c):
+    
+    if ((b*b - 4*a*c) < 0):
+        print("Imaginary")
+    else:
+        n1 = int(math.floor((-b + (b*b - 4*a*c)**0.5) / (2.0*a)))
+        n2 = int(math.floor((-b - (b*b - 4*a*c)**0.5) / (2.0*a)))
+        print("{} {}".format(n1,n2))
