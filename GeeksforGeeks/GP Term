@@ -1,0 +1,2 @@
+def termOfGP(A,B,N):
+    return (A*((B/A)**(N-1)))
