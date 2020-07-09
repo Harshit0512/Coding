@@ -1,0 +1,15 @@
+import collections
+if __name__ == '__main__':
+    n = int(input())
+    shoes = collections.Counter(map(int, input().split()))
+    n1 = int(input())
+    summ = 0
+    for i in range(n1):
+        shoe_size, price = map(int, input().split())
+        
+        if shoes[shoe_size]:
+            summ = summ + price
+            shoes[shoe_size] -= 1
+        else:
+            pass
+    print(summ)
