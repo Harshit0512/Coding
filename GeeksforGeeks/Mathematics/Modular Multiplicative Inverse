@@ -1,0 +1,13 @@
+def multiplicative_inverse(a,m):
+    a = a % m; 
+    for x in range(1, m) : 
+        if ((a * x) % m == 1) : 
+            return x 
+    else:
+        return -1
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a,m = map(int, input().split())
+        print(multiplicative_inverse(a,m))
