@@ -1,0 +1,39 @@
+#1st method
+
+def majorityWins(arr, n,  x,y):
+    count = 0
+    count1 = 0
+    for i in range(len(arr)):
+        if x == arr[i]:
+            count += 1
+        if y == arr[i]:
+            count1 += 1
+    if count > count1:
+        return x
+    if count1 > count:
+        return y
+    if count == count1:
+        if x < y:
+            return x
+        else:
+            return y
+            
+#2nd Method
+
+def majorityWins(arr, n,  x,y):
+    
+    count1 = 0
+    count2 = 0
+    
+    for i in range(n):
+        if arr[i] == x: 
+            count1 += 1
+        elif arr[i] == y:
+            count2 += 1
+            
+    if count1 < count2:
+        return y
+    elif count1 > count2:
+        return x
+    elif count1 == count2:
+        return min(x, y)
