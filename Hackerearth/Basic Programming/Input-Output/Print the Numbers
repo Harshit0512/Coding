@@ -1,0 +1,26 @@
+Python Solution
+
+n = int(input())
+arr = list(map(int,input().split()))
+for num in arr:
+   print(num, end=" ")
+
+C solution
+
+int main() {
+
+    int n, t;
+
+    scanf("%d\n", &n);
+
+    while(n--) {
+
+        scanf("%d ", &t);
+
+        printf("%d ", t);
+
+    }
+
+    return 0;
+
+}
