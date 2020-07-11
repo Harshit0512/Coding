@@ -1,0 +1,24 @@
+string = input()
+
+a = ''
+
+flag = True
+
+for i in string:
+    if i == 'A':
+        a += 'U'
+    elif i == 'G':
+        a += 'C'
+    elif i == 'C':
+        a += 'G'
+    elif i == 'U':
+        a += 'A'
+    elif i == 'T':
+        a += 'A'
+    else:
+        flag = False
+        print('Invalid Input')
+        break
+
+if (flag!=False):
+    print(a)
