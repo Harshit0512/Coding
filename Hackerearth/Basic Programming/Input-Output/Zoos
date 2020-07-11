@@ -1,0 +1,15 @@
+def counting(s, x ,y):
+    for i in range(len(s)):
+        if s[i] == 'z':
+            x += 1
+        elif s[i] == 'o':
+            y += 1
+    if 2*x==y:
+        print('Yes')
+    else:
+        print('No')
+
+if __name__ == '__main__':
+    s = input()
+    x, y = 0,0
+    counting(s, x, y)
