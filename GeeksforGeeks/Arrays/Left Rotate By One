@@ -1,0 +1,13 @@
+def left_rotatebyone(arr, n):
+    a = arr[:1]
+    del arr[:1]
+    arr.extend(a)
+    print(*arr)
+    
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n =int(input())
+        arr = list(map(int, input().split()))
+        left_rotatebyone(arr, n)
