@@ -1,0 +1,12 @@
+#1st method
+from itertools import permutations
+inp = input().split()
+s = inp[0]
+k = inp[1]
+for item in permutations(sorted(s),int(k)):
+    print(''.join(item))
+    
+#2nd method
+from itertools import permutations
+s,n = input().split()
+print(*[''.join(i) for i in permutations(sorted(s),int(n))],sep='\n')
