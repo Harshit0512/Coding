@@ -1,0 +1,14 @@
+try:
+    def fact(a):
+        if a <= 1:
+            return 1
+        else:
+            return a * fact(a-1)
+            
+    if __name__ == '__main__':
+        t= int(input())
+        for i in range(t):
+            a = int(input())
+            print(fact(a))
+except EOFError as e:
+    print(end="")
