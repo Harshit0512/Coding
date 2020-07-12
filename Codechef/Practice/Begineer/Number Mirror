@@ -1,0 +1,6 @@
+try:
+    a = input()
+    for i in range(len(a)):
+        print(a[i],end="")
+except EOFError as e:
+    print(end="")
