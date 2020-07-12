@@ -1,0 +1,6 @@
+from itertools import combinations_with_replacement
+inp = input().split()
+s = inp[0]
+k = inp[1]
+for i in combinations_with_replacement(sorted(s), int(k)):
+    print(''.join(i))
