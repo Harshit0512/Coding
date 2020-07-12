@@ -1,0 +1,14 @@
+if __name__ == '__main__':
+    a = []
+    b = []
+    n = int(input())
+    for i in range(n):
+        s1 = input()
+        a.append(s1)
+    q = int(input())
+    for i in range(q):
+        s2 = input()
+        b.append(s2)
+    for j in range(len(b)):
+        print(a.count(b[j]))
+            
