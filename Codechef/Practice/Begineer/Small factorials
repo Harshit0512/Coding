@@ -1,0 +1,12 @@
+try:
+    t = int(input())
+    for i in range(t):
+        n=int(input())
+        t=n
+        fact=1
+        while(t!=0):
+            fact=fact*t
+            t=t-1
+        print(fact)
+except EOFError as e:
+    print(end="")
