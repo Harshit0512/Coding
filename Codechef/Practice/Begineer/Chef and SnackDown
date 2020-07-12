@@ -1,0 +1,11 @@
+try:
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        lst = [2010, 2015, 2016, 2017, 2019]
+        if n in lst:
+            print('HOSTED')
+        else:
+            print('NOT HOSTED')      
+except EOFError as e:
+    print(end="")
