@@ -1,0 +1,10 @@
+def remove_duplicates(arr):
+    a = set(arr)
+    print(*a)
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        remove_duplicates(arr)
