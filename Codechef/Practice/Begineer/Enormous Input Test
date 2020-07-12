@@ -1,0 +1,10 @@
+try:
+    N,K = map(int,input().split(' '))
+    count = 0
+    for i in range(N):
+        T = int(input())
+        if T%K==0:
+            count = count + 1
+    print(count)
+except EOFError as e:
+    print(end="")
