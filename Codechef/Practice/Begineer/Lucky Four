@@ -1,0 +1,13 @@
+try:
+    def counting_four(a):
+        a = str(a)
+        a = list(a)
+        print(a.count('4'))
+    
+    if __name__ == '__main__':
+        t = int(input())
+        for i in range(t):
+            a = int(input())
+            counting_four(a)
+except EOFError as e:
+    print(end="")
