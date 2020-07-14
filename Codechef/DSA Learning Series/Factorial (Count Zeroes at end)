@@ -1,0 +1,44 @@
+#1st Method
+
+try:
+    def fact(n):
+        l = 0
+        if n <= 1:
+            return 1
+        else:
+            return n * fact(n-1)
+    
+    def find(n):
+        l = fact(n)
+        a = str(l)
+        print(len(a) - len(a.rstrip('0')))
+            
+        
+    if __name__ == '__main__':
+        t = int(input())
+        for i in range(t):
+            n = int(input())
+            find(n)
+except EOFError as e:
+    print(end='')
+    
+#2nd Method
+
+try:
+    def find_no_of_zeros(n):
+        count=0;
+        intial = 5;
+        if(n<5):
+            return 0;
+        while (intial <= n):
+            count =  count + int(n/intial)
+            intial= intial * 5
+        return count
+    
+    if __name__ == '__main__':
+        t = int(input())
+        for _ in range(t):
+            n = int(input())
+            print(find_no_of_zeros(n))
+except EOFError as e:
+    print(end="")
