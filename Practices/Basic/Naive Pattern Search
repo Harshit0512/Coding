@@ -1,0 +1,12 @@
+def search(p,s):
+    if p in s:
+        print('Yes')
+    else:
+        print('No')
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = input()
+        p = input()
+        search(p,s)
