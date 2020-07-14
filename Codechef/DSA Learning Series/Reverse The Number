@@ -1,0 +1,13 @@
+try:
+    def reverse_number(n):
+        a = str(n)
+        a = a[::-1]
+        print(a.strip('0'))
+        
+    if __name__ == '__main__':
+        t = int(input())
+        for i in range(t):
+            n = int(input())
+            reverse_number(n)
+except EOFError as e:
+    print(end="")
