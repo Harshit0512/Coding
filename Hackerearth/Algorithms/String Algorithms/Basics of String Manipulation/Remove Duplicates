@@ -1,0 +1,4 @@
+from collections import OrderedDict
+s = input()
+s1 = set(s)
+print(''.join(OrderedDict.fromkeys(s)))
