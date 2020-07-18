@@ -1,0 +1,9 @@
+if llist is None:
+        llist = SinglyLinkedListNode(data)
+        
+    else:
+        temp = llist
+        llist = SinglyLinkedListNode(data)
+        llist.next = temp
+        del temp
+    return llist
