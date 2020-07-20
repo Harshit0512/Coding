@@ -1,0 +1,18 @@
+A maximum number of 11 slices is attainable with 4 straight cuts.Assuming that after each slice cut we can not put all slice on top of each other.
+
+However, even more slices are possible if the cuts do not all intersect.
+look at  lazy caterer’s sequence
+The "lazy caterer’s sequence" describes the maximum number of pieces of a circle that can be made with a given number of straight cuts.
+The maximum number of pieces, p, that can be created with n cuts is given by the formula:
+
+p = 1/2(n^2 + n + 2)
+
+def check(n):
+    p = 0.5*(n**2 + n + 2)
+    return int(p)
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        print(check(n))
