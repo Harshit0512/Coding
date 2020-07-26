@@ -1,0 +1,12 @@
+def search(arr, n):
+    if n in arr:
+        return True
+    else:
+        return False
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = int(input())
+        print(search(arr, n))
