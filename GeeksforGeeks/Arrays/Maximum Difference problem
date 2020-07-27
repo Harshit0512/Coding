@@ -1,0 +1,39 @@
+Maximum Difference problem is to find the maximum of arr[j] - arr[i] where j>i.
+
+# O(n*n)
+
+def max_diff(arr, n):
+    a = []
+    for i in range(0, n):
+        for j in range(i+1, n):
+            aa = arr[j] - arr[i]
+            a.append(aa)
+    print(max(*a))
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        max_diff(arr, len(arr))
+        
+# O(n)
+
+def max_diff(arr, n):
+    maxx = arr[1] - arr[0]
+    minn = arr[0]
+    
+    for i in range(1, n):
+        if arr[i] - minn > maxx:
+            maxx = arr[i] - minn
+            
+        if arr[i] < minn:
+            minn = arr[i]
+            
+    print(maxx)
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        max_diff(arr, len(arr))
