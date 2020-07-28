@@ -1,0 +1,48 @@
+In Stock Buy and Sell Problem, we assume that we know the prices of stock for upcoming N days. We can buy the stock on any day an we can sell the stock for upcoming days.
+We need to maximize the profit.
+If we have elements in array in decreasing order than there would be no profit because we are selling at lower prices.
+But if we have elements sorted in ascending order than we can get the maximum profit by arr[1] - arr[n-1]. 
+
+# O(n*n)
+
+def maxprofit(arr, start, end):
+    profit = 0
+    
+    if end <= start:
+        return 0
+    for i in range(start, end, 1):
+        for j in range(i+1, end+1):
+            if arr[j] > arr[i]:
+                curr_profit = arr[j] - arr[i] + maxprofit(arr, start, i-1) + maxprofit(arr, j+1, end)
+                profit = max(profit, curr_profit)
+    return profit
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = len(arr)
+        print(maxprofit(arr, 0, n-1))
+        
+# O(n)
+
+def max_profit(arr, n):
+    profit = 0
+    
+    if arr[n-1] <= arr[0]:
+        return 0
+    
+    for i in range(n):
+        if arr[i] > arr[i-1]:
+            profit += arr[i] - arr[i-1]
+    return profit
+
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = len(arr)
+        print(max_profit(arr, n))
