@@ -1,0 +1,45 @@
+def stockBuySell(A,n):
+    
+    li=""
+    minn,maxx,c=0,0,0
+    for i in range(1,n):
+        if A[i]>A[maxx]:
+            maxx=i
+            continue
+        if A[i]==A[maxx]:
+            if A[minn]!=A[maxx]:
+                maxx=i
+                continue
+            else:
+                minn=i
+                maxx=i
+        else:
+            if minn!=maxx:
+                li+="({0} {1}) ".format(minn,maxx)
+                c=1
+            
+            minn=i
+            maxx=i
+            
+    if minn!=maxx and A[minn]!=A[maxx]:
+            li+="({0} {1})".format(minn,maxx)
+            c=1
+            
+   
+            
+    if c==0:
+        print("No Profit")
+        
+    else:
+         print(li.strip())
+        
+    return
+
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        n = int(input())
+        A = list(map(int, input().split()))
+        stockBuySell(A,n)
