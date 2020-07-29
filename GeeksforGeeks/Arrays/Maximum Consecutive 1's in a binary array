@@ -1,0 +1,39 @@
+# Using an array
+
+def max_consecutiveOnes(arr, n):
+    count = 0
+    a = []
+    for i in range(n):
+        if arr[i] == 1:
+            count += 1
+        a.append(count)
+        if arr[i] == 0:
+            count = 0
+    return max(a)
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = len(arr)
+        print(max_consecutiveOnes(arr, n))
+        
+# Using a variable
+
+def max_consecutiveOnes(arr, n):
+    res = 0
+    curr = 0
+    for i in range(n):
+        if arr[i] == 0:
+            curr = 0
+        else:
+            curr += 1
+            res = max(res, curr)
+    return curr
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = len(arr)
+        print(max_consecutiveOnes(arr, n))
