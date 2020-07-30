@@ -1,0 +1,38 @@
+# O(n*n)
+
+def max_sum(arr, n):
+    res = arr[0]
+    for i in range(n):
+        curr = 0
+        for i in range(i, n):
+            curr += arr[i]
+            res = max(res, curr)
+    return res
+    
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(max_sum(arr, len(arr)))
+        
+ # O(n)
+ 
+ Using Kadane's Algorithm
+ 
+ def maxSubArraySum(arr, n): 
+      
+    max_so_far = arr[0] 
+    curr_max = arr[0] 
+      
+    for i in range(1, n): 
+        curr_max = max(arr[i], curr_max + arr[i]) 
+        max_so_far = max(max_so_far,curr_max) 
+          
+    return max_so_far
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(maxSubArraySum(a,len(arr)))
