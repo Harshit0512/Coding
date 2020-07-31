@@ -1,0 +1,60 @@
+# O(n*n)
+
+We consider every element as a beg element then we find out the maximum sum considering the begining element
+
+def max_CircularSubarraySum(arr, n):
+    
+    res = arr[0]
+    
+    for i in range(n):
+        cur_max = arr[i]
+        cur_sum = arr[i]
+        
+        for j in range(1, n):
+            index = (i + j) % n
+            cur_sum += arr[index]
+            cur_max = max(cur_max, cur_sum)
+            
+        res = max(res, cur_max)
+    return res
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(max_CircularSubarraySum(arr, len(arr)))
+        
+# O(n)
+
+def kadane(a, n): 
+    max_so_far = 0
+    max_ending_here = 0
+    for i in range(0, n): 
+        max_ending_here = max_ending_here + a[i] 
+        if (max_ending_here < 0): 
+            max_ending_here = 0
+        if (max_so_far < max_ending_here): 
+            max_so_far = max_ending_here 
+    return max_so_far 
+
+def maxCircularSum(a, n): 
+
+    max_kadane = kadane(a, n) 
+ 
+    max_wrap = 0
+    for i in range(0, n): 
+        max_wrap += a[i] 
+        a[i] = -a[i] 
+
+    max_wrap = max_wrap + kadane(a, n) 
+ 
+    if max_wrap > max_kadane: 
+        return max_wrap 
+    else: 
+        return max_kadane 
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        a = list(map(int, input().split()))
+        print(maxCircularSum(a, len(a)))
