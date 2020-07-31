@@ -1,0 +1,48 @@
+# O(n*n)
+
+Idea - We find out longest alternative subarray starting with this element. 
+
+def longestEvenOddSubarray(arr, n): 
+ 
+    res = 1
+    for i in range(n):
+        curr = 1
+        for j in range(i+1, n):
+            if (arr[j] % 2 == 0 and arr[j-1] % 2 != 0) or (arr[j] % 2 != 0 and arr[j-1] % 2 == 0):
+                curr += 1
+            else:
+                break
+        res = max(res, curr)
+    return res
+            
+    
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = len(arr)  
+        print(longestEvenOddSubarray(arr, n)) 
+        
+        
+# O(n)
+
+Using Kadane's Algorithm. 
+In this solution we find all subaarays ending with that element.
+
+def longestEvenOddSubarray(arr, n): 
+    res = 1
+    cur = 0
+    for i in range(n):
+        if (arr[i] % 2 == 0 and arr[i-1] % 2 != 0) or (arr[i] % 2 != 0 and arr[i-1] % 2 == 0):
+            cur += 1
+            res = max(res, cur)
+        else:
+            cur = 1
+    return res
+            
+            
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))  
+        print(longestEvenOddSubarray(arr, len(arr)))
