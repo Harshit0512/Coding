@@ -1,0 +1,35 @@
+# O(n*n)
+
+def majority(arr, n):
+    for i in range(n):
+        count = 1
+        for j in range(i+1,n):
+            if arr[i] == arr[j]:
+                count += 1
+
+        if count > n/2:
+            return i
+    return -1
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(majority(arr, len(arr)))
+        
+        
+# O(n)
+
+def majority(arr, n):
+    for i in range(n-1):
+        if arr.count(arr[i]) > n/2:
+            return arr.index(arr[i])
+    return -1
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(majority(arr, len(arr)))
