@@ -1,0 +1,39 @@
+# O(n)
+
+def prefix_sum(arr, n):
+    summ = 0
+    for i in range(l,r+1):
+        summ += arr[i]
+    return summ
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = int(input())
+        for i in range(n):
+            l= int(input())
+            r = int(input())
+            print(prefix_sum(arr, len(arr)))
+            
+            
+# O(1) - By using prefix sum array
+
+import itertools
+def prefix_array(arr, l, r):
+    list1 = list(itertools.accumulate(arr, lambda x,y : x+y))
+    if l != 0:
+        return list1[r] - list1[l-1]
+    else:
+        return list1[r]
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        n = int(input())
+        for i in range(n):
+            l = int(input())
+            r = int(input())
+            print(prefix_array(arr, l, r))
