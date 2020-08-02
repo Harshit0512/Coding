@@ -1,0 +1,90 @@
+# O(n*n)
+
+def find_subarray(arr, n, summ):
+    for i in range(n):
+        summ1 = 0
+        for j in range(i, n):
+            summ1 += arr[j]
+            if summ1 == summ:
+                return True
+    return False
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        summ = int(input())
+        print(find_subarray(arr, len(arr), summ))
+        
+        
+# O(n)
+
+We are printing True or False
+
+def find_subarray(arr, n, summ): 
+    
+    curr_sum = arr[0] 
+    start = 0
+    
+    i = 1
+    while i <= n: 
+
+        while curr_sum > summ and start < i-1: 
+          
+            curr_sum = curr_sum - arr[start] 
+            start += 1
+
+        if curr_sum == summ:  
+            return True
+ 
+        if i < n: 
+            curr_sum = curr_sum + arr[i] 
+        i += 1
+
+    return False
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        summ = int(input())
+        print(find_subarray(arr, len(arr), summ))
+        
+        
+# O(n)
+
+We are priinting the location where the sum is find.
+
+def find_subarray(arr, n, summ): 
+    
+    curr_sum = arr[0] 
+    start = 0
+    
+    i = 1
+    while i <= n: 
+
+        while curr_sum > summ and start < i-1: 
+          
+            curr_sum = curr_sum - arr[start] 
+            start += 1
+
+        if curr_sum == summ: 
+            return "Found at %d to %d"%(start, i-1) 
+
+ 
+        if i < n: 
+            curr_sum = curr_sum + arr[i] 
+        i += 1
+
+    return "No subarray found" 
+
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        summ = int(input())
+        print(find_subarray(arr, len(arr), summ))
