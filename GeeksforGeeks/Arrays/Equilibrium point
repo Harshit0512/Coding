@@ -1,0 +1,48 @@
+# O(n*n) - we are printing the index of equilibrium point
+
+def equilibrium_point(arr, n):
+    leftsum = 0
+    rightsum = 0
+
+    for i in range(n): 
+        leftsum = 0
+        rightsum = 0
+
+        for j in range(i): 
+            leftsum += arr[j] 
+
+        for j in range(i + 1, n): 
+            rightsum += arr[j] 
+
+        if leftsum == rightsum: 
+            return i 
+
+    return -1
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(equilibrium_point(arr, len(arr)))
+        
+# O(n)
+
+def equilibrium_point(arr, n):
+ 
+    total_sum = sum(arr) 
+    leftsum = 0
+    for i in range(n):
+
+        if leftsum == total_sum - arr[i]: 
+            return i 
+        leftsum += arr[i] 
+        total_sum -= arr[i]
+        
+ 
+    return -1
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        arr = list(map(int, input().split()))
+        print(equilibrium_point(arr, len(arr)))
