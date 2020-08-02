@@ -1,0 +1,46 @@
+# O(n*n)
+
+def bonacciseries(n, m) : 
+  
+    # Assuming m >= n. 
+    a = [0] * m 
+    a[n - 1] = 1
+ 
+    for i in range(n, m) : 
+        for j in range(i - n, i) : 
+            a[i] = a[i] + a[j] 
+  
+    for i in range(0, m) : 
+        print (a[i], end = " ") 
+    
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        N = int(input())
+        M = int(input())
+        bonacciseries(N, M)
+        
+# O(n)
+
+def bonacciseries(n, m) :  
+   
+    a = [0 for i in range(m)] 
+    a[n - 1] = 1
+    a[n] = 1
+  
+    for i in range(n + 1, m): 
+        a[i] = 2 * a[i - 1] - a[i - n - 1] 
+  
+    for i in range(0, m): 
+        print(a[i], end=" ") 
+    
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        N = int(input())
+        M = int(input())
+        bonacciseries(N, M)
