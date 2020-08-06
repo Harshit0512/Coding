@@ -1,0 +1,13 @@
+# O(n) - space complexity
+
+class Solution:
+    def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
+        target = []
+        start1 = 0
+        start2 = 0
+        for i in range(len(index)):
+            if len(index) != 0:
+                target.insert(index[start1], nums[start2])
+                start1 += 1
+                start2 += 1
+        return target
