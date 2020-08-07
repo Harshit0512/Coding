@@ -1,0 +1,10 @@
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        summ = 0
+        nums.sort()
+        while len(nums) != 0:
+            a = nums[:2]
+            summ += min(a)
+            del nums[:2]
+            del a
+        return summ
