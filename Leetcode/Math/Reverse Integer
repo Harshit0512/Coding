@@ -1,0 +1,16 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        if x<0:
+            sign='-'
+            x=-x
+        else:
+            sign=''
+        n=str(x)
+        n=int(n[::-1])
+        if - 2**31< n< (2**31)-1:
+            if sign=='-':
+                return -int(n)
+            else:
+                return int(n)
+        else:
+            return 0
