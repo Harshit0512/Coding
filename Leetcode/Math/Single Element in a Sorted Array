@@ -1,0 +1,7 @@
+class Solution:
+    def singleNonDuplicate(self, nums: List[int]) -> int:
+        for i in range(len(nums)):
+            count = 0
+            count += nums.count(nums[i])
+            if count == 1:
+                return nums[i]
