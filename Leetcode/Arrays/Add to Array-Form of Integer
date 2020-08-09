@@ -1,0 +1,8 @@
+class Solution:
+    def addToArrayForm(self, A: List[int], K: int) -> List[int]:
+        s = [str(i) for i in A] 
+        res = int("".join(s))
+        res += K
+        res = str(res)
+        res = list(res)
+        return res
