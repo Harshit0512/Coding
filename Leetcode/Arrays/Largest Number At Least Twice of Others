@@ -1,0 +1,9 @@
+class Solution:
+    def dominantIndex(self, nums: List[int]) -> int:
+        elem = max(nums)
+        trgt = int(elem/2)
+        ind = nums.index(elem)
+        for n in range(len(nums)):
+            if trgt<nums[n] and ind!=n:
+                return -1
+        return ind
