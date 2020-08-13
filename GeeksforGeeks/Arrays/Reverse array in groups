@@ -1,0 +1,13 @@
+def rotate_array(arr, n, d):
+    a = arr[:d]
+    del arr[:d]
+    a.reverse()
+    arr.reverse()
+    a.extend(arr)
+    return a
+
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    d = int(input())
+    print(*rotate_array(arr, len(arr), d))
