@@ -1,0 +1,5 @@
+class Solution:
+    def canArrange(self, arr: List[int], k: int) -> bool:
+        c = Counter(n % k for n in arr)
+        if k == 2: return c[0] % 2 == 0
+        return all(not r or c[k - r] == cnt for r, cnt in c.items())
