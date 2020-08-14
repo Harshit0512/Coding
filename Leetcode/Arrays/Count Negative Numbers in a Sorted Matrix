@@ -1,0 +1,18 @@
+class Solution:
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        res = 0
+        for arr in grid:
+            l,r = 0,len(arr)
+            if arr[0] < 0:
+                res += r
+            elif arr[r-1] >= 0:
+                continue
+            else:
+                while l < r:
+                    mid = (l+r)//2
+                    if arr[mid] < 0:
+                        r = mid
+                    elif arr[mid] >= 0:
+                        l = mid+1
+                res += len(arr)-r
+        return res
