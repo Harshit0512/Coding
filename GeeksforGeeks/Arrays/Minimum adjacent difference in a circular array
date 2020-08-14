@@ -1,0 +1,14 @@
+def min_adjacent(nums, n):
+    a = 1000000
+    if len(nums) < 2:
+        return 0
+    
+    for i in range(n):
+        b = abs(nums[i-1] - nums[i])
+        a = min(a, b)
+    return a
+
+
+if __name__ == '__main__':
+    nums = list(map(int, input().split()))
+    print(min_adjacent(nums, len(nums)))
