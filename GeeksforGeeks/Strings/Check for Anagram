@@ -1,0 +1,38 @@
+# O(n*logn)
+
+def anagram(s1, s2):
+    s1 = sorted(s1)
+    s1 = ''.join(s1)
+    s2 = sorted(s2)
+    s2 = ''.join(s2)
+
+    if s1 == s2:
+        return 'Yes'
+    return 'No'
+
+if __name__ == '__main__':
+    s1 = input()
+    s2 = input()
+    print(anagram(s1, s2))
+    
+# O(n)
+
+char = 256
+def anagram(s1, s2):
+    if len(s1) != len(s2):
+        return 'No'
+    count = [0] * char
+    
+    for i in range(len(s1)):
+        count[ord(s1[i])]+= 1
+        count[ord(s2[i])]-= 1
+    
+    for j in range(char):
+        if count[j] != 0:
+            return False
+    return True
+
+if __name__ == '__main__':
+    s1 = input()
+    s2 = input()
+    print(anagram(s1, s2))
