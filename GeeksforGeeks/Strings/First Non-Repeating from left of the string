@@ -1,0 +1,16 @@
+char = 256
+def firstNonRepeating(s):
+    count = [0] * char
+    for i in range(len(s)):
+        count[ord(s[i])] += 1
+        
+    for i in range(len(s)):
+        if count[ord(s[i])] == 1:
+            return i
+    return -1
+            
+
+
+if __name__ == "__main__" :  
+    s = input()  
+    print(firstNonRepeating(s)) 
