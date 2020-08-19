@@ -1,0 +1,17 @@
+def naive(txt, pattern):
+    m = len(pattern)
+    n = len(txt)
+    for i in range(n-m+1):
+        j = 0
+        while(j < m): 
+            if (txt[i + j] != pattern[j]): 
+                break
+            j += 1
+        if j == m:
+            print(i, end = " ")
+
+
+if __name__ == '__main__':
+    txt = input()
+    pattern = input()
+    naive(txt, pattern)
