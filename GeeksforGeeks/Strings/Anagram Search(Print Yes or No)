@@ -1,0 +1,27 @@
+MAX = 256
+def search1_for_anagram(txt,pat):
+    M = len(pat) 
+    N = len(txt) 
+
+    countP = [0]*MAX
+  
+    countTW = [0]*MAX
+  
+    for i in range(M): 
+        (countP[ord(pat[i]) ]) += 1
+        (countTW[ord(txt[i]) ]) += 1
+
+    for i in range(M,N): 
+
+        if compare(countP, countTW): 
+            return True 
+
+        (countTW[ ord(txt[i]) ]) += 1
+
+        (countTW[ ord(txt[i-M]) ]) -= 1
+    return False
+
+if __name__ == '__main__':
+    txt = input()
+    pat = input()      
+    print(search1_for_anagram(txt,pat))
