@@ -1,0 +1,19 @@
+Given a string str and another string patt. Find the character in patt that is present at the minimum index in str. 
+If no character of patt is present in str then print ‘No character present’.
+
+def minIndexchar(s,p):
+    import operator
+    if len(set(p) & set(s)) == 0:
+        print ("No character present",end="")
+    else:
+        inds = dict()
+        for c in p:
+            if c in s:
+                inds[c] = s.index(c)
+        inds = sorted(inds.items(),key=operator.itemgetter(1))
+        print (inds[0][0],end="")
+        
+if __name__ == '__main__':
+    s = input()
+    p = input()
+    minIndexchar(s,p)
