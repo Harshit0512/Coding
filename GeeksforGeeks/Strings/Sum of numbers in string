@@ -1,0 +1,7 @@
+import re 
+def findSum(str1):
+    return sum(map(int,re.findall('\d+',str1))) 
+
+if __name__ == '__main__':
+    str1 = input()
+    print(findSum(str1))
