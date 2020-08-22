@@ -1,0 +1,29 @@
+You don't have to take any input. Just complete the strstr() function which takes two strings str, target as an input parameter.
+The function returns -1 if no match if found else it returns an integer denoting the first occurrence of the x in the string s.
+
+# 1st method
+
+def strstr(s,p):
+    import re
+    loc = re.search(p,s)
+    if loc is not None:
+        return (loc.start())
+    else:
+        return -1
+    
+if __name__ == '__main__':
+    s = input()
+    p = input()
+    print(strstr(s,p))
+    
+# 2nd method
+
+def strstr(s,p):
+    if p in s:
+        return s.index(p)
+    else:
+        return -1
+if __name__ == '__main__':
+    s = input()
+    p = input()
+    print(strstr(s,p))
