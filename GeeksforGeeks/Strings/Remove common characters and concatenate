@@ -1,0 +1,21 @@
+Modify both the strings such that all the common characters of s1 and s2 are to be removed and the uncommon characters of s1 and s2 are to be concatenated.
+Note: If all characters are removed print -1
+
+def concatenatedString(s,p):
+    cms = set(s) & set(p)
+    rst = []
+    for i in s:
+        if i not in cms:
+            rst.append(i)
+    for i in p:
+        if i not in cms:
+            rst.append(i)
+    if len(rst) == 0:
+        return -1
+    else:
+        return ''.join(rst)
+    
+if __name__ == '__main__':
+    s = input()
+    p = input()
+    print(concatenatedString(s,p))
