@@ -1,0 +1,17 @@
+An isogram is a string in which no letter occurs more than once.
+
+def isIsogram(s):
+    clean_s = s.lower() 
+    letter_list = [] 
+  
+    for letter in clean_s: 
+        if letter.isalpha(): 
+            if letter in letter_list: 
+                return False
+            letter_list.append(letter) 
+  
+    return True
+
+if __name__ == '__main__':
+    s = input()
+    print(isIsogram(s))
