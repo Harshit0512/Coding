@@ -1,0 +1,24 @@
+def keypad(s):
+    res=''
+    for item in s:
+        if item in 'abc':
+            res+='2'
+        elif item in 'def':
+            res+='3'
+        elif item in 'ghi':
+            res+='4'
+        elif item in 'jkl':
+            res+='5'
+        elif item in 'mno':
+            res+='6'
+        elif item in 'pqrs':
+            res+='7'
+        elif item in 'tuv':
+            res+='8'
+        elif item in 'wxyz':
+            res+='9'
+    return res
+
+if __name__ == '__main__':
+    s = input()
+    print(keypad(s))
