@@ -1,0 +1,8 @@
+Using first_occurrence and last_occurrence function
+
+def count_occurrence(arr, n, x):
+first = first_occurrence(arr, k)
+if first == - 1:
+  return 0
+else:
+  return (last_occurrence(arr, k) - first + 1)
