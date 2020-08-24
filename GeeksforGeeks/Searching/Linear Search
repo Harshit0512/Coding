@@ -1,0 +1,12 @@
+def binary_search(arr, k):
+    if k in arr:
+        return arr.index(k)
+    else:
+        return -1
+
+
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    k = int(input())
+    print(binary_search(arr, k))
