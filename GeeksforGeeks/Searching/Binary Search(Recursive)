@@ -1,0 +1,20 @@
+Note - This is for sorted array.  Iterative solution is much better than recursive solution.
+
+def binary_search(arr, k, low, high):
+    if low > high:
+        return -1
+    mid = (low+ high) // 2
+    if arr[mid] == k:
+        return mid
+    elif arr[mid] > k:
+        return binary_search(arr, k, low, mid-1)
+    else:
+        return binary_search(arr, k, mid+1, high)
+    return -1
+    
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    k = int(input())
+    n = len(arr)
+    print(binary_search(arr, k, 0, n-1))
