@@ -1,0 +1,34 @@
+# Naive Solution
+
+def square_root(x):
+    i = 1
+    while i*i <= x:
+        i += 1
+    return (i-1)
+
+if __name__ == '__main__':
+    x = int(input())
+    print(square_root(x))
+    
+# Better Approach - Binary Search
+
+def square_root_floor(x):
+    low = 1
+    high = x
+    ans = -1
+    
+    while low <= high:
+        mid = (low + high)//2
+        msquare = mid * mid
+        if msquare == x:
+            return mid
+        elif msquare > x:
+            high = mid - 1
+        else:
+            low = mid + 1
+            ans = mid
+    return ans
+
+if __name__ == '__main__':
+    x = int(input())
+    print(square_root_floor(x))
