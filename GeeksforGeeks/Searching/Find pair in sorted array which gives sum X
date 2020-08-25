@@ -1,0 +1,18 @@
+# Two Pointer Approach
+
+def ispair(arr, n, x):
+    left = 0
+    right = n-1
+    while left <= right:
+        if arr[left] + arr[right] == x:
+            return True
+        elif arr[left] + arr[right] > x:
+            right -= 1
+        else:
+            left += 1
+    return False
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    x = int(input())
+    print(ispair(arr, len(arr), x))
