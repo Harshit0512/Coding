@@ -1,0 +1,24 @@
+# Naive Solution - O(n*3)
+
+def istriplet(arr, n, x):
+    for i in range(n):
+        for j in range(i+1, n):
+            for k in range(j+1, n):
+                if arr[i] + arr[j] +arr[k] == x:
+                    return True
+    return False
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    x = int(input())
+    print(istriplet(arr, len(arr), x))
+    
+# Efficient Solution
+Use ispair function for each index - O(n*2)
+
+for i in range(n):
+  if isPiar(arr, i+1, n-1, x-a[i]):
+    return True
+return False
+
+Something like this
