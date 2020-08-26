@@ -1,0 +1,27 @@
+Given a sorted array arr[] of size N without duplicates, and given a value x. Find the floor of x in given array.
+Floor of x is defined as the largest element K in arr[] such that K is smaller than or equal to x.
+
+def findFloor(A,n,x):
+    
+    beg=0
+    end=n-1
+    c=0
+    c1=0
+    A.append(A[0])
+    while(beg<=end):
+        mid=beg + (end-beg)//2
+        if A[mid]<=x and A[mid]>=A[c]:
+            c=mid
+            c1=1
+            if A[mid]<A[mid+1]:
+                beg=mid+1
+            else:
+                end=mid-1
+        elif A[mid]>x:
+            end=mid-1
+        else:
+            beg=mid+1
+    if c1==1:
+        return c
+    else:
+        return -1
