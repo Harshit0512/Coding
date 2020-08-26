@@ -1,0 +1,12 @@
+def countOccurence(arr,n,k):
+    
+    d={}
+    c=0
+    for i in range(n):
+        d[arr[i]]=0
+    for i in range(n):
+        d[arr[i]]+=1
+    for i in d.values():
+        if i>(int(n/k)):
+            c+=1
+    return c
