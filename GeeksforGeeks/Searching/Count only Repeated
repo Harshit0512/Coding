@@ -1,0 +1,39 @@
+def first(a, n):
+    beg = 0
+    end=n-1
+    while(beg<=end):
+        mid=beg + (end-beg)//2
+        if mid==0:
+            if a[mid]==a[mid+1]:
+                return mid
+            beg=mid+1
+        elif a[mid]==a[mid+1] and a[mid]>a[mid-1]:
+            return mid
+        elif a[mid]-a1==mid:
+            beg=mid+1
+        else:
+            end=mid-1
+
+def last(a,n,x):
+    beg=0
+    end=n-1
+    if a[n-1]==a[n-2]:
+        return n-1
+    while(beg<=end):
+        mid=beg+(end-beg)//2
+        if a[mid]==x and a[mid+1]!=x:
+            return mid
+        elif a[mid]<=x:
+            beg=mid+1
+        else:
+            end=mid-1
+            
+            
+t=int(input())
+for i1 in range(t):
+    n=int(input())
+    a=list(map(int,input().strip().split()))
+    a1=first(a,n)
+    element=a[a1]
+    a2=last(a,n,element)
+    print("{} {}".format(element,a2-a1+1))
