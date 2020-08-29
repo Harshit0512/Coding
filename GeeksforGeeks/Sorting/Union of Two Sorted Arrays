@@ -1,0 +1,57 @@
+# Naive Solution
+
+def union(arr1, arr2, n, m):
+    c = arr1 + arr2
+    for i in range(n):
+        c[i] = arr1[i]
+    for j in range(m):
+        c[n+i] = arr2[i]
+    c.sort()
+    for i in range(n+m):
+        if i == 0 or c[i] != c[i-1]:
+            print(c[i], end = " ")
+
+if __name__ == '__main__':
+    arr1 = list(map(int, input().split()))
+    arr2 = list(map(int, input().split()))
+    union(arr1, arr2, len(arr1), len(arr2))
+    
+# Efficient Solution
+
+def union(arr1, arr2, n, m):
+    i, j = 0, 0
+    while i < n and j < m: 
+        if i > 0 and arr1[i] == arr1[i-1]:  
+            i += 1
+            continue
+            
+        if j > 0 and arr1[j] == arr2[j-1]: 
+            j+= 1
+            continue
+            
+        if arr1[i] < arr2[j]:
+            print(arr1[i], end =" ")
+            i += 1
+            
+        elif arr2[j] < arr1[i]: 
+            print(arr2[j], end = " ") 
+            j += 1
+        
+        else:
+            print(arr1[i], end = " ")
+            i += 1
+            j += 1
+            
+
+    while i < n: 
+        if i == 0 or arr1[i] != arr1[i-1]:
+            i += 1
+  
+    while j < m: 
+        if j == 0 or arr2[j] != arr2[j-1]:
+            j += 1
+
+if __name__ == '__main__':
+    arr1 = list(map(int, input().split()))
+    arr2 = list(map(int, input().split()))
+    union(arr1, arr2, len(arr1), len(arr2))
