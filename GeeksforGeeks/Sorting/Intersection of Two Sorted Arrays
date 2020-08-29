@@ -1,0 +1,37 @@
+# Naive Solution
+
+def intersection(arr1, arr2, n, m):
+    for i in range(n):
+        if i > 0 and arr1[i-1] == arr1[i]:
+            continue
+        for j in range(m):
+            if arr1[i] == arr2[j]:
+                print(arr1[i], end = " ")
+
+
+
+if __name__ == '__main__':
+    arr1 = list(map(int, input().split()))
+    arr2 = list(map(int, input().split()))
+    intersection(arr1, arr2, len(arr1), len(arr2))
+    
+# Efficient Solution
+
+def intersection(arr1, arr2, n, m):
+    i, j = 0, 0
+    while i < n and j < m: 
+        if arr1[i] < arr2[j]: 
+            i += 1
+        elif arr2[j] < arr1[i]: 
+            j+= 1
+        else: 
+            print(arr2[j], end = " ") 
+            j += 1
+            i += 1
+
+
+
+if __name__ == '__main__':
+    arr1 = list(map(int, input().split()))
+    arr2 = list(map(int, input().split()))
+    intersection(arr1, arr2, len(arr1), len(arr2))
