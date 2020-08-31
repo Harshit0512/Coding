@@ -1,0 +1,22 @@
+def chocolate_distribution(arr, n, m):
+    if m > n:
+        return -1
+    arr.sort()
+    res = arr[m-1] - arr[0]
+    i=0
+    while(i+m-1<n ): 
+      
+        diff = arr[i+m-1] - arr[i] 
+        if (diff < res): 
+            min_diff = diff 
+          
+        i+=1
+          
+    return res
+
+
+
+if __name__ == '__main__':
+    arr = list(map(int, input().split()))
+    m = int(input())
+    print(chocolate_distribution(arr, len(arr), m))
