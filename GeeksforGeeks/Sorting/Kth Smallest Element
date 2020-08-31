@@ -1,0 +1,12 @@
+# Naive Solution
+
+def kth_smallest_element(arr, k):
+    arr.sort()
+    return arr[k-1]
+
+
+if __name__ == '__main__':
+    arr= list(map(int, input().split()))
+    k = int(input())
+    print(kth_smallest_element(arr, k))
+    
